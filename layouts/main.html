@@ -14,10 +14,13 @@
     <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
     <!-- Calendly link widget end -->
     {tailwindcss}
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body class="font-sans bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-50">
+<body class="font-sans bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 bg-graph flex flex-col min-h-screen">
     <include src="header.html"></include>
-    {slot}
+    <main class="flex-grow">
+        {slot}
+    </main>
     <include src="footer.html"></include>
     <script src="/assets/js/main.js"></script>
     <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
