@@ -1,0 +1,126 @@
+---
+import SquiggleArrow from "../components/doodles/SquiggleArrow.astro";
+import Hashtag from "../components/doodles/Hashtag.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Offbeat Canine - Dog Training and Education">
+    <section class="relative bg-brand">
+        <div class="absolute inset-0 bg-texture"></div>
+        <div
+            class="container flex flex-col items-center justify-center py-20 px-8"
+        >
+            <include
+                src="images/logo.svg"
+                alt="Offbeat Canine Logo"
+                class="h-96 text-black"></include>
+        </div>
+        <div
+            class="-mb-px w-full h-[46px] bg-checkerboard-light dark:bg-checkerboard-dark bg-repeat-x"
+        >
+        </div>
+    </section>
+
+    <section class="py-10 border-t dark:border-neutral-800">
+        <div class="container">
+            <div class="prose lg:prose-lg dark:prose-invert mx-auto">
+                <h2>
+                    Welcome to <span class="text-brand font-display"
+                        >Offbeat Canine</span
+                    >, your trusted partner in dog training services based in
+                    Londonderry, NH.
+                </h2>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-96 mx-auto">
+        <hr class="dark:border-neutral-600" />
+    </div>
+
+    <section class="py-10">
+        <div class="container">
+            <div class="prose lg:prose-xl dark:prose-invert mx-auto">
+                <div
+                    class="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8"
+                >
+                    <div>
+                        <p>
+                            <span class="font-display text-2xl"
+                                >I'm Megan, the founder of Offbeat Canine
+                                Training</span
+                            >
+                        </p>
+                        <p class="text-xl">
+                            Dedicated to bringing harmony and understanding to
+                            the relationship between dogs and their owners.
+                        </p>
+                        <strong>
+                            Together we can tune your training tempo!
+                        </strong>
+                        <svg
+                            class="mt-8 hidden md:block translate-x-1/2 w-full max-w-32 mx-auto text-brand transform -rotate-12"
+                            viewBox="0 0 99 91"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M46.5897 90C32.2617 82.5795 21.668 75.8216 13.4112 62.0208C9.00167 54.6506 4.91717 47.0127 2.69169 38.6607C-0.54097 26.5288 0.793624 10.3852 12.9895 3.52983C28.1392 -4.9859 49.2008 9.31642 45.2853 26.7698C45.1636 27.3123 43.6421 30.6293 44.4297 28.79C48.6716 18.8834 61.263 9.74938 71.1476 6.48662C86.7877 1.32402 97.7846 9.63273 97.1912 26.0637C96.7624 37.9369 88.4709 51.895 80.1949 60.0373C70.4344 69.6401 57.315 75.4033 50.4294 87.5728"
+                                stroke="currentColor"
+                                stroke-width="1.83638"
+                                stroke-linecap="round"></path>
+                        </svg>
+                    </div>
+                    <div class="flex items-center">
+                        <div
+                            class="group max-w-96 overflow-hidden flex flex-col items-start bg-white p-4 pb-12 shadow-md rounded-sm border border-neutral-200 rotate-2 transform transition-transform ease-out duration-300 hover:-rotate-2 hover:shadow-lg"
+                        >
+                            <img
+                                src="assets/images/megan.png"
+                                alt="Photo of Megan and her two dogs"
+                                class="my-0 sm:my-0 md:my-0 lg:my-0"
+                            />
+                            <div
+                                class="absolute h-full top-0 left-1/2 w-12 transform origin-top-left bg-gradient-to-l from-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:rotate-12 transition-all ease-out duration-300"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="max-w-96 mx-auto">
+        <hr class="dark:border-neutral-600" />
+    </div>
+
+    <section>
+        <div class="relative container py-10">
+            <Hashtag classList={['absolute w-12 top-48 -left-8 opacity-50']}></Hashtag>
+            <ul
+                class="relative flex flex-col justify-center items-center gap-4"
+            >
+                <li class="relative">
+                    <include
+                        src="hollow-link.html"
+                        href="/about"
+                        text="Learn more about Offbeat Canine"></include>
+                </li>
+                <li>
+                    <include
+                        src="hollow-link.html"
+                        href="/services"
+                        text="View services and prices"></include>
+                </li>
+                <li>
+                    <include
+                        src="hollow-link.html"
+                        href="/contact"
+                        text="Contact the trainer"></include>
+                </li>
+            </ul>
+            <SquiggleArrow classList={['absolute top-10 right-0 lg:right-48 h-16 transform -rotate-90 -scale-x-100 opacity-50']} />
+        </div>
+    </section>
+</Layout>
