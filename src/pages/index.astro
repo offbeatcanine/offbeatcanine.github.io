@@ -3,9 +3,10 @@ import ArrowSquiggle from "../components/doodles/ArrowSquiggle.astro";
 import Hashtag from "../components/doodles/Hashtag.astro";
 import Layout from "../layouts/Layout.astro";
 import Logo from "../components/images/logo.astro";
-import Heart from "../components/doodles/Heart.astro";
-import HollowLink from "../components/hollow-link.astro";
 import Map from "../components/icons/map.astro";
+import HollowLink from "../components/hollow-link.astro";
+import { Image } from "astro:assets";
+import iacpImage from "../../assets/images/IACP-2024-logo.png";
 ---
 
 <Layout title="Offbeat Canine - Dog Training and Education">
@@ -65,7 +66,7 @@ import Map from "../components/icons/map.astro";
                         </p>
                     </div>
                     <div class="w-36 flex-shrink-0 rounded-full bg-neutral-100 mx-auto">
-                        <img src="/assets/images/IACP-2024-logo.png" alt="Supporting memeber of the IACP" class="w-36 !my-0" />
+                        <Image src={iacpImage} alt="Supporting memeber of the IACP" class="w-36 !my-0" />
                     </div>
                 </div>
 
