@@ -5,12 +5,14 @@ import Layout from "../layouts/Layout.astro";
 import Logo from "../components/images/logo.astro";
 import Heart from "../components/doodles/Heart.astro";
 import HollowLink from "../components/hollow-link.astro";
+import Map from "../components/icons/map.astro";
 ---
 
 <Layout title="Offbeat Canine - Dog Training and Education">
     <section class="relative bg-brand">
         <div class="absolute inset-0 bg-texture"></div>
-        <div class="container flex flex-col items-center justify-center py-20 px-8">
+        <div
+            class="container flex flex-col items-center justify-center py-20 px-8">
             <Logo class="h-96 text-black" />
         </div>
         <div
@@ -21,66 +23,60 @@ import HollowLink from "../components/hollow-link.astro";
     <section class="py-10 border-t dark:border-neutral-800">
         <div class="container">
             <div class="prose lg:prose-lg dark:prose-invert mx-auto">
-                <h2>
-                    Welcome to
-                    <span class="text-brand font-display">Offbeat Canine</span>
-                    , your trusted partner in dog training services based in Londonderry,
-                    NH.
-                </h2>
-            </div>
-        </div>
-    </section>
+                <h2>Personalized dog training</h2>
+                <p>
+                    Dog training is not one-size-fits-all! Every dog is
+                    different, and everyone has different expectations and goals
+                    for their dogs. We take a personal approach to training,
+                    working closely with you to figure out what motivates your
+                    dog, help you understand their behavior, and communicate
+                    effectively.
+                </p>
+                <p>
+                    It all starts with a <em>FREE</em> phone consultation! Email
+                    us to get the conversation started!
+                </p>
+                <a href="/contact" class="inline-block button">Contact Us</a>
 
-    <div class="max-w-96 mx-auto">
-        <hr class="dark:border-neutral-600" />
-    </div>
+                <hr class="dark:border-neutral-600" />
 
-    <section class="py-10">
-        <div class="container">
-            <div class="prose lg:prose-xl dark:prose-invert mx-auto">
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 justify-items-center gap-8">
+                <h3 class="flex items-center gap-2">
+                    <Map
+                        class="w-6 h-6 text-neutral-700 dark:text-neutral-500"
+                    />
+                    Londonderry, New Hampshire
+                </h3>
+                <p>
+                    Serving all of southern New Hampshire and surrounding areas!
+                    If you're not close-by, don't worry, we come to you!
+                </p>
+
+                <hr class="dark:border-neutral-600" />
+
+                <div class="flex flex-col items-start justify-start md:flex-row gap-4">
                     <div>
+                        <h3 class="mt-0">
+                            Supporting member of the IACP
+                        </h3>
                         <p>
-                            <span class="font-display text-2xl">
-                                I'm Megan, the founder of Offbeat Canine
-                                Training
-                            </span>
+                            Offbeat Canine is a member of the International Association
+                            of Canine Professionals.
+                            <a href="https://iacpdogs.org/page/code-of-conduct-ethics">Read about their Code of Conduct & Ethics.</a>
                         </p>
-                        <p class="text-xl">
-                            Dedicated to bringing harmony and understanding to
-                            the relationship between dogs and their owners.
-                        </p>
-                        <strong>
-                            Together we can tune your training tempo!
-                        </strong>
-                        <Heart class="mt-8 hidden md:block translate-x-1/2 w-full max-w-32 mx-auto text-brand transform -rotate-12" />
                     </div>
-                    <div class="flex items-center">
-                        <div
-                            class="group max-w-96 overflow-hidden flex flex-col items-start bg-white p-4 pb-12 shadow-md rounded-sm border border-neutral-200 rotate-2 transform transition-transform ease-out duration-300 hover:-rotate-2 hover:shadow-lg">
-                            <img
-                                src="assets/images/megan.png"
-                                alt="Photo of Megan and her two dogs"
-                                class="my-0 sm:my-0 md:my-0 lg:my-0"
-                            />
-                            <div
-                                class="absolute h-full top-0 left-1/2 w-12 transform origin-top-left bg-gradient-to-l from-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:rotate-12 transition-all ease-out duration-300">
-                            </div>
-                        </div>
+                    <div class="w-36 flex-shrink-0 rounded-full bg-neutral-100 mx-auto">
+                        <img src="assets/images/IACP-2024-logo.png" alt="Supporting memeber of the IACP" class="w-36 !my-0" />
                     </div>
                 </div>
+
+                <hr class="dark:border-neutral-600" />
             </div>
         </div>
     </section>
-
-    <div class="max-w-96 mx-auto">
-        <hr class="dark:border-neutral-600" />
-    </div>
 
     <section>
         <div class="relative container py-10">
-            <Hashtag classList={["absolute w-12 top-48 -left-8 opacity-50"]} />
+            <Hashtag classList={["absolute w-12 top-48 -left-2 opacity-50"]} />
             <ul
                 class="relative flex flex-col justify-center items-center gap-4">
                 <li class="relative">
@@ -99,7 +95,9 @@ import HollowLink from "../components/hollow-link.astro";
                     </HollowLink>
                 </li>
             </ul>
-            <ArrowSquiggle class="absolute top-10 right-0 lg:right-48 h-16 transform -rotate-90 -scale-x-100 opacity-50" />
+            <ArrowSquiggle
+                class="absolute top-10 right-0 lg:right-48 h-16 transform -rotate-90 -scale-x-100 opacity-50"
+            />
         </div>
     </section>
 </Layout>

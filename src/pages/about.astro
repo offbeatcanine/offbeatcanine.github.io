@@ -5,12 +5,33 @@ import Layout from "../layouts/Layout.astro";
 <Layout title="About | Offbeat Canine - Dog Training and Education">
     <div class="container py-10">
         <article class="prose lg:prose-xl dark:prose-invert mx-auto">
-            <h1 class="text-3xl font-bold">About</h1>
-
-            <p>
-                Thanks for taking the time to learn more what Offbeat Canine is
-                all about!
-            </p>
+            <div class="flex flex-col md:flex-row gap-4">
+                <div>
+                    <h1 class="text-3xl font-bold">About</h1>
+                    <p>
+                        Thanks for taking the time to learn more what Offbeat
+                        Canine is all about!
+                    </p>
+                    <p>
+                        <span class="font-display text-2xl">
+                            I'm Megan, owner and training director!
+                        </span>
+                    </p>
+                </div>
+                <div class="flex items-center justify-center md:justify-start">
+                    <div
+                        class="group max-w-96 overflow-hidden flex flex-col items-start bg-white p-4 pb-12 shadow-md rounded-sm border border-neutral-200 rotate-2 transform transition-transform ease-out duration-300 hover:-rotate-2 hover:shadow-lg">
+                        <img
+                            src="assets/images/megan.png"
+                            alt="Photo of Megan and her two dogs"
+                            class="my-0 sm:my-0 md:my-0 lg:my-0"
+                        />
+                        <div
+                            class="absolute h-full top-0 left-1/2 w-12 transform origin-top-left bg-gradient-to-l from-white/20 to-transparent opacity-0 group-hover:opacity-100 group-hover:rotate-12 transition-all ease-out duration-300">
+                        </div>
+                    </div>
+                </div>
+            </div>
             <p>
                 My journey into the world of dog training began over a decade
                 ago when I embarked on my first job as a dog walker. It was

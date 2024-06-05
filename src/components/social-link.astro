@@ -1,7 +1,6 @@
 ---
-const {href, icon, text} = Astro.props;
+const {href} = Astro.props;
 ---
-<a href={href} class="{class} aspect-[1/1] w-28 p-2 flex flex-col items-center justify-center rounded-3xl border-px bg-neutral-200 dark:bg-neutral-700">
-    <include src={icon} class="h-10 w-10"></include>
-    <span class="mt-4 font-medium text-sm">{text}</span>
+<a href={href} class="aspect-[1/1] w-12 p-1 flex flex-col items-center justify-center rounded-2xl border-px bg-neutral-200 dark:bg-neutral-700 text-neutral-800 dark:text-neutral-200 dark:hover:text-neutral-800 hover:scale-105 hover:bg-brand transition-all">
+    <slot />
 </a>
