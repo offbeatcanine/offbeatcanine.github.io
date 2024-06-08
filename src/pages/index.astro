@@ -1,0 +1,104 @@
+---
+import ArrowSquiggle from "../components/doodles/ArrowSquiggle.astro";
+import Hashtag from "../components/doodles/Hashtag.astro";
+import Layout from "../layouts/Layout.astro";
+import Logo from "../components/images/logo.astro";
+import Map from "../components/icons/map.astro";
+import HollowLink from "../components/hollow-link.astro";
+import { Image } from "astro:assets";
+import iacpImage from "../../assets/images/IACP-2024-logo.png";
+---
+
+<Layout title="Offbeat Canine - Dog Training and Education">
+    <section class="relative bg-brand">
+        <div class="absolute inset-0 bg-texture"></div>
+        <div
+            class="container flex flex-col items-center justify-center py-20 px-8">
+            <Logo class="h-96 text-black" />
+        </div>
+        <div
+            class="-mb-px w-full h-[46px] bg-checkerboard-light dark:bg-checkerboard-dark bg-repeat-x">
+        </div>
+    </section>
+
+    <section class="py-10 border-t dark:border-neutral-800">
+        <div class="container">
+            <div class="prose lg:prose-lg dark:prose-invert mx-auto">
+                <h2>Personalized dog training</h2>
+                <p>
+                    Dog training is not one-size-fits-all! Every dog is
+                    different, and everyone has different expectations and goals
+                    for their dogs. We take a personal approach to training,
+                    working closely with you to figure out what motivates your
+                    dog, help you understand their behavior, and communicate
+                    effectively.
+                </p>
+                <p>
+                    It all starts with a <em>FREE</em> phone consultation! Email
+                    us to get the conversation started!
+                </p>
+                <a href="/contact" class="inline-block button">Contact Us</a>
+
+                <hr class="dark:border-neutral-600" />
+
+                <h3 class="flex items-center gap-2">
+                    <Map
+                        class="w-6 h-6 text-neutral-700 dark:text-neutral-500"
+                    />
+                    Londonderry, New Hampshire
+                </h3>
+                <p>
+                    Serving all of southern New Hampshire and surrounding areas!
+                    If you're not close-by, don't worry, we come to you!
+                </p>
+
+                <hr class="dark:border-neutral-600" />
+
+                <div class="flex flex-col items-start justify-start md:flex-row gap-4">
+                    <div>
+                        <h3 class="mt-0">
+                            Supporting member of the IACP
+                        </h3>
+                        <p>
+                            Offbeat Canine is a member of the International Association
+                            of Canine Professionals.
+                            <a href="https://iacpdogs.org/page/code-of-conduct-ethics">Read about their Code of Conduct & Ethics.</a>
+                        </p>
+                    </div>
+                    <div class="w-36 flex-shrink-0 rounded-full bg-neutral-100 mx-auto">
+                        <Image src={iacpImage} alt="Supporting memeber of the IACP" class="w-36 !my-0" />
+                    </div>
+                </div>
+
+                <hr class="dark:border-neutral-600" />
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="relative container py-10">
+            <Hashtag classList={["absolute w-12 top-48 -left-2 opacity-50"]} />
+            <ul
+                class="relative flex flex-col justify-center items-center gap-4">
+                <li class="relative">
+                    <HollowLink href="/about">
+                        Learn more about Offbeat Canine
+                    </HollowLink>
+                </li>
+                <li>
+                    <HollowLink href="/services">
+                        View services and prices
+                    </HollowLink>
+                </li>
+                <li>
+                    <HollowLink href="/contact">
+                        Contact the trainer
+                    </HollowLink>
+                </li>
+            </ul>
+            <ArrowSquiggle
+                class="absolute top-10 right-0 lg:right-48 h-16 transform -rotate-90 -scale-x-100 opacity-50"
+            />
+        </div>
+    </section>
+</Layout>
