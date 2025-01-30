@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PaperAirplane from "../components/doodles/PaperAirplane.astro";
+import Facebook from "../components/icons/facebook.astro";
+import Instagram from "../components/icons/instagram.astro";
 ---
 
 <Layout title="Contact | Offbeat Canine - Dog Training and Education">
@@ -10,9 +12,28 @@ import PaperAirplane from "../components/doodles/PaperAirplane.astro";
                 <h1 class="text-2xl font-bold">Contact</h1>
                 <PaperAirplane class="absolute -top-6 -right-6 h-16 lg:h-24 lg:-right-20 opacity-50" />
             </div>
+
+            <p>
+                Follow us on socials!
+            </p>
+
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="https://www.facebook.com/profile.php?id=61557716376366" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-neutral-300 dark:bg-neutral-700 no-underline ring-brand ring-offset-4 dark:ring-offset-neutral-900 outline-none hover:ring-2 focus:ring-2 hover:bg-brand hover:text-neutral-900 focus:bg-brand focus:text-neutral-900 transition font-medium px-4 py-1 rounded-full shadow-sm active:shadow-none">
+                    <Facebook />
+                    Facebook
+                </a>
+                <a href="https://www.instagram.com/offbeatcaninetraining/" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-neutral-300 dark:bg-neutral-700 no-underline ring-brand ring-offset-4 dark:ring-offset-neutral-900 outline-none hover:ring-2 focus:ring-2 hover:bg-brand hover:text-neutral-900 focus:bg-brand focus:text-neutral-900 transition font-medium px-4 py-1 rounded-full shadow-sm active:shadow-none">
+                    <Instagram />
+                    Instagram
+                </a>
+            </div>
+
+            <hr />
+
             <p>
                 Want to schedule an audition? Or just have questions? Contact us using the form below.
             </p>
+
             <form
                 data-netlify="true"
                 name="contact"
