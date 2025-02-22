@@ -4,6 +4,7 @@ import { glob } from 'astro/loaders';
 const reviews = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/data/reviews' }),
   schema: z.object({
+    date: z.string(),
     title: z.string(),
     author: z.string(),
     rating: z.number(),

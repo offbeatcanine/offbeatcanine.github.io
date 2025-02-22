@@ -1,0 +1,31 @@
+media: src/assets
+
+content:
+  - name: reviews
+    label: Reviews
+    path: src/data/reviews
+    type: collection
+    view:
+      fields: [date, title, author, rating]
+      primary: title
+      sort: [date, title]
+    fields:
+      - name: date
+        type: date
+        required: true
+      - name: title
+        type: string
+        required: true
+      - name: author
+        type: string
+        required: true
+      - name: rating
+        type: number
+        required: true
+        options:
+          min: 0
+          max: 5
+      - name: body
+        type: rich-text
+        options:
+          format: markdown
