@@ -25,6 +25,8 @@ content:
         options:
           min: 0
           max: 5
+      - name: photo
+        type: image
       - name: body
         type: rich-text
         options:
