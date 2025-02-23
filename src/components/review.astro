@@ -1,0 +1,59 @@
+---
+import { marked } from "marked";
+import { Image } from "astro:assets";
+
+const { review, index } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+    "/src/assets/*.{jpeg,jpg,png,gif,avif,webp}",
+);
+
+const image = images[review.data.photo];
+---
+
+<div
+    x-data=`{ isExpanded: false, index: ${index} }`
+    x-init="$watch('current', value => {isExpanded = false})">
+    <div
+        class="flex flex-col items-start sm:flex-row sm:items-center gap-2 justify-between flex-wrap">
+        <h4 class="ml-1 text-2xl font-script">{review.data.author}</h4>
+        <div class="flex gap-3">
+            {
+                Array.from({ length: 5 }, (_, index) => (
+                    <svg
+                        class={`size-5 inline-block ${index < review.data.rating ? "text-brand" : "text-neutral-300 dark:text-neutral-700"}`}
+                        aria-hidden="true">
+                        <use href="#star" />
+                    </svg>
+                ))
+            }
+        </div>
+    </div>
+    <div
+        x-ref="body"
+        class="mt-2 relative overflow-hidden transition-all duration-300"
+        :class="isExpanded ? '' : 'line-clamp-6'">
+        <div
+            set:html={marked.parse(review.body)}
+            class="prose lg:prose-lg dark:prose-invert"
+        />
+    </div>
+    <button
+        x-show="$refs.body.scrollHeight > $refs.body.clientHeight"
+        @click="isExpanded = !isExpanded"
+        class="text-brand font-medium mt-2 rounded-full px-1 border-2 border-transparent focus:outline-none focus:border-2 focus:border-brand hover:underline"
+        x-bind:disabled="index+1 !== current">
+        Show <span x-text="isExpanded ? 'less' : 'more'"></span>
+    </button>
+
+    {
+        image && (
+            <Image
+                x-show="index+1 == current"
+                src={image()}
+                alt={`photo 1 in review from ${review.data.author}`}
+                class="mt-4 size-48 object-cover rounded-md"
+            />
+        )
+    }
+</div>

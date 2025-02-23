@@ -9,6 +9,7 @@ export default {
     extend: {
       fontFamily: {
         display: ["Roboto Slab", "system-ui"],
+        script: ["Gochi Hand", "cursive"]
       },
       colors: {
         brand: "#e8934d",

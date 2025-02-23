@@ -2,7 +2,7 @@
 date: 2025-01-23
 title: Frankie's Fabulous Foundation
 author: Brooke & Frankie
-rating: 5
+rating: 2
 ---
 We cannot say enough good things about Meg! From the very beginning, when we brought our dog Frankie home this summer, she has been an invaluable resource. She guided us through crate training, leash training, and so much more, making what could have been a stressful process so much smoother.  
   
