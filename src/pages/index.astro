@@ -7,6 +7,7 @@ import Map from "../components/icons/map.astro";
 import HollowLink from "../components/hollow-link.astro";
 import { Image } from "astro:assets";
 import iacpImage from "../../assets/images/IACP-2024-logo.png";
+import Reviews from "../components/reviews.astro";
 ---
 
 <Layout title="Offbeat Canine - Dog Training and Education">
@@ -23,7 +24,7 @@ import iacpImage from "../../assets/images/IACP-2024-logo.png";
 
     <section class="py-10 border-t dark:border-neutral-800">
         <div class="container">
-            <div class="prose lg:prose-lg dark:prose-invert mx-auto">
+            <div class="max-w-3xl prose lg:prose-lg dark:prose-invert mx-auto">
                 <h2>Personalized dog training</h2>
                 <p>
                     Dog training is not one-size-fits-all! Every dog is
@@ -54,25 +55,36 @@ import iacpImage from "../../assets/images/IACP-2024-logo.png";
 
                 <hr class="dark:border-neutral-600" />
 
-                <div class="flex flex-col items-start justify-start md:flex-row gap-4">
+                <div
+                    class="flex flex-col items-start justify-start md:flex-row gap-4">
                     <div>
-                        <h3 class="mt-0">
-                            Supporting member of the IACP
-                        </h3>
+                        <h3 class="mt-0">Supporting member of the IACP</h3>
                         <p>
-                            Offbeat Canine is a member of the International Association
-                            of Canine Professionals.
-                            <a href="https://iacpdogs.org/page/code-of-conduct-ethics">Read about their Code of Conduct & Ethics.</a>
+                            Offbeat Canine is a member of the International
+                            Association of Canine Professionals.
+                            <a
+                                href="https://iacpdogs.org/page/code-of-conduct-ethics"
+                                >Read about their Code of Conduct & Ethics.</a
+                            >
                         </p>
                     </div>
-                    <div class="w-36 flex-shrink-0 rounded-full bg-neutral-100 mx-auto">
-                        <Image src={iacpImage} alt="Supporting memeber of the IACP" class="w-36 !my-0" />
+                    <div
+                        class="w-36 flex-shrink-0 rounded-full bg-neutral-100 mx-auto">
+                        <Image
+                            src={iacpImage}
+                            alt="Supporting memeber of the IACP"
+                            class="w-36 !my-0"
+                        />
                     </div>
                 </div>
 
                 <hr class="dark:border-neutral-600" />
             </div>
         </div>
+    </section>
+
+    <section>
+        <Reviews />
     </section>
 
     <section>
