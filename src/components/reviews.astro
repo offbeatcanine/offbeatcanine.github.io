@@ -14,10 +14,10 @@ const reviews = await getCollection("reviews");
             <h3 class="text-2xl font-semibold">What the critics are saying</h3>
             <div class="flex items-center justify-between gap-4">
                 <button
-                    @disabled="current == 0"
+                    x-attr:disabled="current == 0"
                     @click="previous"
                     class="shrink-0 p-2.5 rounded-full focus:outline-none border-2 border-transparent focus:border-brand"
-                    :class="current == 0 ? 'text-gray-300' : ''">
+                    :class="current == 0 ? 'text-gray-300 dark:text-gray-700' : ''">
                     <CaretLeftMini class="size-5" />
                     <label class="sr-only">previous</label>
                 </button>
@@ -27,10 +27,10 @@ const reviews = await getCollection("reviews");
                     <span x-text="total"></span>
                 </p>
                 <button
-                    @disabled="current == total - 1"
+                    x-attr:disabled="current == total - 1"
                     @click="next"
                     class="shrink-0 p-2.5 rounded-full focus:outline-none border-2 border-transparent focus:border-brand"
-                    :class="current == total - 1 ? 'text-gray-300' : ''">
+                    :class="current == total - 1 ? 'text-gray-300 dark:text-gray-700' : ''">
                     <CaretRightMini class="size-5" />
                     <label class="sr-only">next</label>
                 </button>
@@ -41,7 +41,7 @@ const reviews = await getCollection("reviews");
     <div class="w-screen sm:max-w-6xl mx-auto relative">
         <div
             x-ref="container"
-            class="flex snap-x snap-mandatory gap-8 overflow-x-auto pb-14 px-4 sm:px-20 lg:px-64 md:[mask:linear-gradient(to_right,transparent_0%,black_6rem,black_calc(100%-6rem),transparent_100%)]">
+            class="flex snap-x snap-mandatory gap-8 overflow-x-auto pb-14 px-4 sm:px-20 md:px-48 lg:px-64 lg:[mask:linear-gradient(to_right,transparent_0%,black_6rem,black_calc(100%-6rem),transparent_100%)]">
             {
                 reviews.map((review, idx) => (
                     <Review review={review} index={idx} />
@@ -69,16 +69,14 @@ const reviews = await getCollection("reviews");
             current: 0,
             total: total,
             next() {
-                this.$refs.container.scrollBy({
-                    top: 0,
-                    left: this.$refs.container.clientWidth / 2,
+                this.$refs.container.children[this.current + 1].scrollIntoView({
+                    block: "nearest",
                     behavior: "smooth",
                 });
             },
             previous() {
-                this.$refs.container.scrollBy({
-                    top: 0,
-                    left: this.$refs.container.clientWidth / -2,
+                this.$refs.container.children[this.current - 1].scrollIntoView({
+                    block: "nearest",
                     behavior: "smooth",
                 });
             },

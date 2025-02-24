@@ -12,7 +12,7 @@ const image = images[review.data.photo];
 ---
 
 <div
-    x-intersect.threshold.100=`current = ${index}`
+    x-intersect.threshold.80=`current = ${index}`
     class="snap-center shrink-0"
     x-data=`{ isExpanded: false, index: ${index} }`
     x-init="$watch('current', value => {isExpanded = false})">
