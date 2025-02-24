@@ -1,0 +1,52 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Review from "../components/review.astro";
+import Star from "../components/doodles/Star.astro";
+
+const reviews = (await getCollection("reviews")).sort(
+    (a, b) => b.data.date - a.data.date,
+);
+---
+
+<Layout title="About | Offbeat Canine - Dog Training and Education">
+    <section class=" bg-neutral-50 dark:bg-neutral-900 border-b dark:border-neutral-800 ">
+        <div class="py-10">
+            <div class="container relative prose lg:prose-lg dark:prose-invert mx-auto">
+                <h1>Reviews</h1>
+                <h3>Here's what the critics are saying</h3>
+
+                <p class="text-pretty">
+                    Want to share your experience? Drop a review on
+                    <a
+                        href="https://www.google.com/search?q=offbeatcanine&sca_esv=da1f3862cfa5b8b8&source=hp&ei=hdW7Z7zALY6vptQPno-A8Aw&iflsig=ACkRmUkAAAAAZ7vjlXQqM6oMdvdh3nMrwIXlTZOLT2Ta&ved=0ahUKEwj8luD2nduLAxWOl4kEHZ4HAM4Q4dUDCBA&uact=5&oq=offbeatcanine&gs_lp=Egdnd3Mtd2l6Ig1vZmZiZWF0Y2FuaW5lMgcQABiABBgNMgsQABiABBiGAxiKBTIIEAAYgAQYogQyCBAAGIAEGKIEMggQABiABBiiBDIFEAAY7wUyBRAAGO8FSLQZUABY0hZwAXgAkAEBmAF1oAGWCaoBBDEzLjG4AQPIAQD4AQGYAg6gApcJqAIKwgIREC4YgAQYsQMY0QMYgwEYxwHCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgIOEC4YgAQYsQMY0QMYxwHCAg4QLhiABBixAxiDARiKBcICChAAGAMY6gIYjwHCAgoQLhgDGOoCGI8BwgIOEAAYgAQYsQMYgwEYigXCAgsQLhiABBjRAxjHAcICBRAAGIAEwgILEC4YgAQYsQMYgwHCAgQQABgDwgIIEC4YgAQYsQPCAgcQABiABBgKwgILEC4YgAQYxwEYrwHCAgUQLhiABMICDRAAGIAEGLEDGEYY-QHCAgcQLhiABBgKwgINEC4YgAQYxwEYChivAcICEBAuGIAEGMcBGJgFGAoYrwHCAgYQABgNGB7CAggQABgIGA0YHpgDBfEFyhzfsOLvADiSBwQxMS4zoAfWhwE&sclient=gws-wiz#lrd=0xa9cbded5f4f523ff:0x20a95cd6437c4ca9,1,,,,"
+                        >Google</a
+                    >,
+                    <a
+                        href="https://www.facebook.com/profile.php?id=61557716376366"
+                        >Facebook</a
+                    >, or
+                    <a href="/contact" class="whitespace-nowrap">Contact us!</a>
+                </p>
+                <Star class="size-20 absolute top-5 right-0 transform rotate-12 text-yellow-500" />
+            </div>
+        </div>
+    </section>
+
+    <section
+        class="container py-10 overflow-hidden space-y-8 prose lg:prose-lg dark:prose-invert mx-auto divide-y dark:divide-neutral-700">
+        {reviews.map((review, idx) => <Review review={review} index={idx} />)}
+    </section>
+
+    <!-- Hidden star SVG for reference in reviews -->
+    <svg style="display: none;">
+        <defs>
+            <symbol id="star" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    fill-rule="evenodd"
+                    d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.006 5.404.434c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.434 2.082-5.005Z"
+                    clip-rule="evenodd"></path>
+            </symbol>
+        </defs>
+    </svg>
+</Layout>
