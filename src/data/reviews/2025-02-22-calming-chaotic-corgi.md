@@ -2,7 +2,7 @@
 date: 2025-01-23
 title: Calming chaotic corgi
 author: Tracy & Finn
-rating: 1
+rating: 5
 ---
 We reached out to Megan from Offbeat Canine after realizing our Corgi pup, Finn, was struggling with barrier aggression and showing some challenging behaviors, like lunging at moving cars during walks. We discovered her services through a local Corgi Facebook group, and from the moment we reached out, she has been incredibly communicative and supportive.  
   

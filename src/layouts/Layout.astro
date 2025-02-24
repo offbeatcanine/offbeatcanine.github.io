@@ -24,7 +24,7 @@ const { title } = Astro.props;
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap&family=Gochi+Hand&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet" />
 
         <!-- Google tag (gtag.js) -->
         <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-XW0YPR75T3"></script>
@@ -35,6 +35,9 @@ const { title } = Astro.props;
 
           gtag('config', 'G-XW0YPR75T3');
         </script>
+
+        <!-- Alpine intersect plugin -->
+        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
     </head>
 
     <body class="font-sans bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 bg-graph flex flex-col min-h-screen">
