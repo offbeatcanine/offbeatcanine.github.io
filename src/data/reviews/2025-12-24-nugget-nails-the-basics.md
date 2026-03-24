@@ -1,7 +1,7 @@
 ---
 date: 2025-12-24
 title: Nugget Nails the Basics
-author: Jen & Nugget
+author: Jenn & Nugget
 rating: 5
 photo: /src/assets/nugget.jpg
 ---
