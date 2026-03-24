@@ -11,6 +11,94 @@ import Swirl from "../components/doodles/Swirl.astro";
 ---
 
 <Layout title="Services | Offbeat Canine - Dog Training and Education">
+    <script type="application/ld+json" is:inline>
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Service",
+          "name": "Audition",
+          "description": "An in-home behavioral evaluation where the trainer observes your dog in their natural environment, conducts a thorough evaluation, and formulates a customized training plan.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Offbeat Canine Training",
+            "url": "https://www.offbeatcanine.com"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "65",
+            "priceCurrency": "USD",
+            "description": "One hour in-home behavioral evaluation"
+          }
+        },
+        {
+          "@type": "Service",
+          "name": "Jam Session",
+          "description": "Packages of four or six weekly personalized private dog training lessons conducted in the comfort of your own home.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Offbeat Canine Training",
+            "url": "https://www.offbeatcanine.com"
+          },
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "450",
+              "priceCurrency": "USD",
+              "description": "Four one-hour sessions"
+            },
+            {
+              "@type": "Offer",
+              "price": "600",
+              "priceCurrency": "USD",
+              "description": "Six one-hour sessions"
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Trainer Tour",
+          "description": "Trainer-led private dog training sessions at your home without you needing to be present. Includes behavior work, obedience practice, and neighborhood walks.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Offbeat Canine Training",
+            "url": "https://www.offbeatcanine.com"
+          },
+          "offers": [
+            {
+              "@type": "Offer",
+              "price": "450",
+              "priceCurrency": "USD",
+              "description": "Four one-hour sessions"
+            },
+            {
+              "@type": "Offer",
+              "price": "600",
+              "priceCurrency": "USD",
+              "description": "Six one-hour sessions"
+            }
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "Townie Tune Up",
+          "description": "One-off follow-up private training sessions available after completing Band Practice. Can be held at parks, breweries, or other dog-friendly locations.",
+          "provider": {
+            "@type": "LocalBusiness",
+            "name": "Offbeat Canine Training",
+            "url": "https://www.offbeatcanine.com"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "115",
+            "priceCurrency": "USD",
+            "description": "One hour session"
+          }
+        }
+      ]
+    }
+    </script>
+
     <section class="bg-neutral-50 dark:bg-neutral-900">
         <div class="container py-10">
             <div class="prose lg:prose-lg dark:prose-invert mx-auto">

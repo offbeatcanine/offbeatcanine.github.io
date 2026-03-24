@@ -37,7 +37,47 @@ const { title } = Astro.props;
         </script>
 
         <!-- Alpine intersect plugin -->
-        <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+        <script is:inline defer src="https://cdn.jsdelivr.net/npm/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+
+        <script type="application/ld+json" is:inline>
+        {
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Offbeat Canine Training",
+          "url": "https://www.offbeatcanine.com",
+          "description": "Personalized, in-home dog training and education serving southern New Hampshire and surrounding areas.",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Londonderry",
+            "addressRegion": "NH",
+            "addressCountry": "US"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 42.8471444591301,
+            "longitude": -71.35635751363043
+          },
+          "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": 42.8471444591301,
+              "longitude": -71.35635751363043
+            },
+            "geoRadius": "80000"
+          },
+          "award": "Best Dog Trainer, Best of 603 2025",
+          "memberOf": {
+            "@type": "Organization",
+            "name": "International Association of Canine Professionals",
+            "alternateName": "IACP"
+          },
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61557716376366",
+            "https://www.instagram.com/offbeatcaninetraining/"
+          ]
+        }
+        </script>
     </head>
 
     <body class="font-sans bg-neutral-50 dark:bg-neutral-900 dark:text-neutral-50 bg-graph flex flex-col min-h-screen">

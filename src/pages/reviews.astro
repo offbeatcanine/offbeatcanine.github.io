@@ -7,9 +7,38 @@ import Star from "../components/doodles/Star.astro";
 const reviews = (await getCollection("reviews")).sort(
     (a, b) => b.data.date - a.data.date,
 );
+
+const avgRating = reviews.reduce((sum, r) => sum + r.data.rating, 0) / reviews.length;
+
+const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Offbeat Canine Training",
+    "url": "https://www.offbeatcanine.com",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": avgRating.toFixed(1),
+        "reviewCount": reviews.length,
+        "bestRating": "5",
+        "worstRating": "1",
+    },
+    "review": reviews.map((r) => ({
+        "@type": "Review",
+        "author": { "@type": "Person", "name": r.data.author },
+        "datePublished": r.data.date.toISOString().split("T")[0],
+        "reviewBody": r.body,
+        "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": String(r.data.rating),
+            "bestRating": "5",
+            "worstRating": "1",
+        },
+    })),
+};
 ---
 
 <Layout title="About | Offbeat Canine - Dog Training and Education">
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
     <section class=" bg-neutral-50 dark:bg-neutral-900 border-b dark:border-neutral-800 ">
         <div class="py-10">
             <div class="container relative prose lg:prose-lg dark:prose-invert mx-auto">
