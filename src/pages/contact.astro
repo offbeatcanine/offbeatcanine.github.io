@@ -37,6 +37,7 @@ import Instagram from "../components/icons/instagram.astro";
             <form
                 data-netlify="true"
                 name="contact"
+                id="contact-form"
                 class="w-full flex flex-col items-start gap-4">
                 <input
                     name="subject"
@@ -86,4 +87,34 @@ import Instagram from "../components/icons/instagram.astro";
             </p>
         </div>
     </section>
+
+    <script is:inline>
+        const contactForm = document.getElementById('contact-form');
+
+        contactForm?.addEventListener('submit', (event) => {
+            if (typeof window.gtag !== 'function') {
+                return;
+            }
+
+            event.preventDefault();
+
+            let submitted = false;
+            const submitForm = () => {
+                if (submitted) {
+                    return;
+                }
+
+                submitted = true;
+                HTMLFormElement.prototype.submit.call(contactForm);
+            };
+
+            window.gtag('event', 'contact_form_submit', {
+                form_name: 'contact',
+                event_callback: submitForm,
+                event_timeout: 1000,
+            });
+
+            window.setTimeout(submitForm, 1000);
+        });
+    </script>
 </Layout>
