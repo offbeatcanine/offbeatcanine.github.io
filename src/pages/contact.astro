@@ -10,19 +10,24 @@ import Instagram from "../components/icons/instagram.astro";
         <div class="prose lg:prose-lg dark:prose-invert mx-auto">
             <div class="relative">
                 <h1>Contact</h1>
-                <PaperAirplane class="absolute -top-6 -right-6 h-16 lg:h-24 lg:-right-20 opacity-50" />
+                <PaperAirplane
+                    class="absolute -top-6 -right-6 h-16 lg:h-24 lg:-right-20 opacity-50"
+                />
             </div>
 
-            <p>
-                Follow us on socials!
-            </p>
+            <p>Follow us on socials!</p>
 
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <a href="https://www.facebook.com/profile.php?id=61557716376366" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-neutral-300 dark:bg-neutral-700 no-underline ring-brand ring-offset-4 dark:ring-offset-neutral-900 outline-none hover:ring-2 focus:ring-2 hover:bg-brand hover:text-neutral-900 focus:bg-brand focus:text-neutral-900 transition font-medium px-4 py-1 rounded-full shadow-sm active:shadow-none">
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a
+                    href="https://www.facebook.com/profile.php?id=61557716376366"
+                    class="w-full sm:w-auto flex items-center justify-center gap-2 bg-neutral-300 dark:bg-neutral-700 no-underline ring-brand ring-offset-4 dark:ring-offset-neutral-900 outline-none hover:ring-2 focus:ring-2 hover:bg-brand hover:text-neutral-900 focus:bg-brand focus:text-neutral-900 transition font-medium px-4 py-1 rounded-full shadow-sm active:shadow-none">
                     <Facebook />
                     Facebook
                 </a>
-                <a href="https://www.instagram.com/offbeatcaninetraining/" class="w-full sm:w-auto flex items-center justify-center gap-2 bg-neutral-300 dark:bg-neutral-700 no-underline ring-brand ring-offset-4 dark:ring-offset-neutral-900 outline-none hover:ring-2 focus:ring-2 hover:bg-brand hover:text-neutral-900 focus:bg-brand focus:text-neutral-900 transition font-medium px-4 py-1 rounded-full shadow-sm active:shadow-none">
+                <a
+                    href="https://www.instagram.com/offbeatcaninetraining/"
+                    class="w-full sm:w-auto flex items-center justify-center gap-2 bg-neutral-300 dark:bg-neutral-700 no-underline ring-brand ring-offset-4 dark:ring-offset-neutral-900 outline-none hover:ring-2 focus:ring-2 hover:bg-brand hover:text-neutral-900 focus:bg-brand focus:text-neutral-900 transition font-medium px-4 py-1 rounded-full shadow-sm active:shadow-none">
                     <Instagram />
                     Instagram
                 </a>
@@ -31,7 +36,8 @@ import Instagram from "../components/icons/instagram.astro";
             <hr />
 
             <p>
-                Want to schedule an audition? Or just have questions? Contact us using the form below.
+                Want to schedule an audition? Or just have questions? Contact us
+                using the form below.
             </p>
 
             <form
@@ -71,8 +77,7 @@ import Instagram from "../components/icons/instagram.astro";
                         rows="6"
                         required
                         placeholder="Please include your dogs name, age, breed, and your training goals."
-                        class="mt-2 px-2 w-full input"
-                    ></textarea>
+                        class="mt-2 px-2 w-full input"></textarea>
                 </label>
                 <button
                     type="submit"
@@ -83,38 +88,9 @@ import Instagram from "../components/icons/instagram.astro";
             </form>
 
             <p class="pt-8">
-                Haven't heard back? We usually respond in a timely manner, try checking your spam folder!
+                Haven't heard back? We usually respond in a timely manner, try
+                checking your spam folder!
             </p>
         </div>
     </section>
-
-    <script is:inline>
-        const contactForm = document.getElementById('contact-form');
-
-        contactForm?.addEventListener('submit', (event) => {
-            if (typeof window.gtag !== 'function') {
-                return;
-            }
-
-            event.preventDefault();
-
-            let submitted = false;
-            const submitForm = () => {
-                if (submitted) {
-                    return;
-                }
-
-                submitted = true;
-                HTMLFormElement.prototype.submit.call(contactForm);
-            };
-
-            window.gtag('event', 'contact_form_submit', {
-                form_name: 'contact',
-                event_callback: submitForm,
-                event_timeout: 1000,
-            });
-
-            window.setTimeout(submitForm, 1000);
-        });
-    </script>
 </Layout>
